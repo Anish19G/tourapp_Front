@@ -5,8 +5,14 @@ import PopularCard from "../../components/Cards/PopularCard";
 import { popularsData } from "../../utils/data";
 import Filters from "./Filters";
 import "../Tours/tour.css";
+import { useGetToursQuery } from "../../services/apiSlice"; // Importing the API slice for fetching tours
 
 const Tours = () => {
+  const { data: tours, error, isLoading } = useGetToursQuery(); // Using the query hook to fetch tours
+  // if (isLoading) return <div>Loading...</div>; // Handle loading state
+  // if (error) return <div>Error fetching tours: {error.message}</div>; //
+  console.log("tours", tours); // Log the fetched tours data
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
