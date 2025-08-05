@@ -18,25 +18,6 @@ import PopularCard from "../../components/Cards/PopularCard";
 
 
 const Home = () => {
-
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const fetchdata = async () => {
-      try {
-        const response = await fetch('https://tourapp-lcwg.onrender.com');
-        // const response = await fetch('http://localhost:4005/api/books');
-
-        const json = await response.json();
-        setBooks(json); // Update state correctly
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
-    };
-    fetchdata();
-  }, []);
-
-  console.log("datasss", books);
   var settings = {
     dots: false,
     infinite: true,
